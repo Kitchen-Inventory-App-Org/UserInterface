@@ -11,3 +11,5 @@
 - npm init
 - npm install create-react-app
 - npm start 
+
+If react-scripts dont exist then use this: npm install react-scripts --save
