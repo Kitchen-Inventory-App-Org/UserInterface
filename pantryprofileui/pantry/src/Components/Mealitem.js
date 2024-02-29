@@ -10,7 +10,7 @@ const Mealitem=(getMeal)=>{
                     <p>{getMeal.data.strArea} food</p>
                 </div>
                 <div className="recipe">
-                    <h2>Cooking Instructions</h2>
+                    <h2>Recipe</h2>
                     <p>{getMeal.data.strInstructions}</p>
                     <img src={getMeal.data.strMealThumb}></img>
                     <a href={getMeal.data.strSource}>More Info Link</a>
