@@ -1,25 +1,56 @@
-import React from 'react';
-import './App.css'; // Import the CSS file
+import {useState, useEffect } from "react";
+import "./App.css";
+import SearchBar from "./components/SearchBar";
+import RecipeCard from "./components/RecipeCard";
+
+const apiUrl = "https://www.themealdb.com/api/json/v1/1/search.php?s=";
 
 function App() {
+  const [isLoading, setIsLoading] = useState(false);
+  const [query, setQuery] = useState("");
+  const [recipes, setRecipes] = useState([]);
+
+  //function to search for the recipes
+
+  const searchRecipes = async () => {
+    setIsLoading(true);
+    const url = apiUrl + query;
+    const res = await fetch(url);
+    const data = await res.json();
+    //console.log(data);
+    setRecipes(data.meals);
+    setIsLoading(false);
+  };
+
+  useEffect(() => {
+    searchRecipes()
+  }, []);
+
+  const handleSubmit  = event => {
+    event.preventDefault()
+    searchRecipes()
+  }
+
   return (
-    <div className="App">
-      <div className="header">
-        <h1>Kitchen Table</h1>
-      </div>
-      <div className="container">
-        <input type="text" className="search-bar" placeholder="Search..." />
-        <div className="dropdown">
-          <button className="dropbtn">Inventory</button>
-          <div className="dropdown-content">
-            <a href="#">Link 1</a>
-            <a href="#">Link 2</a>
-            <a href="#">Link 3</a>
-          </div>
-        </div>
+    <div className="container">
+      <h2>Pantry Profile App</h2>
+      <SearchBar
+        handleSubmit={handleSubmit}
+        value={query}
+        onChange = {event => setQuery(event.target.value)}
+        isLoading={isLoading}
+      />
+      <div className="recipes">
+        {recipes ? recipes.map(recipe => (
+          <RecipeCard
+            key={recipe.idMeal}
+              recipe={recipe}
+              />
+        )): "No Recipes!"}
       </div>
     </div>
   );
 }
 
 export default App;
+
