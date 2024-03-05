@@ -8,7 +8,9 @@ Requirements:
 - ES7+ React/Redux/React-Native snippets extension VS Code
 
 **Steps:** 
-- cd pantryprofileui, then cd pantry
+- cd UserInterface
+- cd pantryprofileui
+- cd pantry
 - npm init
 - npm install create-react-app
 - npm start 
