@@ -1,18 +1,19 @@
-# UI
-
-
-Requirements:
-- Install Node.js 
-- Live server extension VS Code 
-- Simple React Snippets extension VS Code
-- ES7+ React/Redux/React-Native snippets extension VS Code
-
-**Steps:** 
-- cd UserInterface
-- cd pantryprofileui
-- cd pantry
-- npm init
-- npm install create-react-app
-- npm start 
-
-If react-scripts dont exist then use this: "npm install react-scripts --save" while in directory for pantry
+# Build Instructions 
+* Install Node.js
+  -   `https://nodejs.org/en`
+* To check installation, go to the command line and enter:
+  -   `node -v`
+  -   `npm -v`
+* Go to vs code,
+  -  Add Live Server Extension
+  -  Add Simple React Snippets
+  -  Add ES7+ React/Redux/React-Native snippets
+* Create a new folder
+* Open folder
+  - `git clone https://github.com/Kitchen-Inventory-App-Org/UserInterface.git`
+  - `cd .\pantryprofileui\`
+  - `cd .\pantry\`
+  - `npm init`
+  - `npm start`
+* If react-scripts doesn't exist then use this:
+  - `npm install react-scripts --save` while in the pantry directory
