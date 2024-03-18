@@ -3,10 +3,13 @@
     padding: 0;
     box-sizing: border-box;
 }
-body{
-    background-color: rgba(15,15,15);
+/* Creating the background of the home page */
+body{ 
+    background-color: rgba(15,15,15); 
+    /* background-image: url('./image/fridge.jpg') */
 }
-.heading h1{
+ /* the code for "Search your food recipe" */
+.heading h1{ 
     color: white;
     font-size: 48px;
     font-weight: 900;
@@ -15,10 +18,12 @@ body{
     text-align: center;
     text-shadow: 3px 6px rgba(50, 50, 70,0.7);
 }
+/* the code for "some yummy food to try!" */
 .heading h4{
     color: white;
     text-align: center;
 }
+/* the code for search bar */
 .searchBox{
     text-align: center;
     margin: 3rem;
