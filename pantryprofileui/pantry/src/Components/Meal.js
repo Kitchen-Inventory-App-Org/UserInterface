@@ -13,7 +13,7 @@ const Meal=()=>{
     return(
         <div className="main">
             <div className="heading">
-                <h1>Search Your Food Recipe</h1>
+                <h1>Kitchen Table</h1>
                 <h4>Some Yummy Food You Have to Try!</h4>
             </div>
             <div className="searchBox">
