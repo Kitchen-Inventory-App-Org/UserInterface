@@ -3,22 +3,26 @@
     padding: 0;
     box-sizing: border-box;
 }
+/* Creating the background of the home page */
 body{
-    background-color: rgba(15,15,15);
+    background-color: #4d3c33;
 }
-.heading h1{
+ /* the code for "Search your food recipe" */
+.heading h1{ 
     color: white;
     font-size: 48px;
-    font-weight: 900;
+    font-weight: 10;
     letter-spacing: 1px;
     padding-top: 2rem;
     text-align: center;
     text-shadow: 3px 6px rgba(50, 50, 70,0.7);
 }
+/* the code for "some yummy food to try!" */
 .heading h4{
     color: white;
     text-align: center;
 }
+/* the code for search bar */
 .searchBox{
     text-align: center;
     margin: 3rem;
@@ -47,9 +51,9 @@ body{
     width: 300px;
     height: 400px;
     margin: 1.5rem;
-    background: linear-gradient(to left, rgba(244, 22, 129, 0.5),to left rgba(255,255,255,0.9));
+    background: linear-gradient(to left, rgba(22, 181, 244, 1),to left rgba(black,9));
     border-radius: 8px;
-    box-shadow: 0 7px 12px rgba(244, 22, 129, 0.5);
+    box-shadow: 0 7px 12px rgba(147, 228, 7, 4);
     overflow: auto;
     box-sizing: border-box;
     position: relative;
