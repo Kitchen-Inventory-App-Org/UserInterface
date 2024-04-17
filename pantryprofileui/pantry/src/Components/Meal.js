@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Mealitem from "./Mealitem";
+import InventoryList from "./InventoryList";
 const Meal=()=>{
     const[search,setSearch]=useState();
     const[Mymeal,setMeal]=useState();
@@ -10,7 +11,7 @@ const Meal=()=>{
         }
 
     }
-    return(
+    return( 
         <div className="main">
             <div className="heading">
                 <h1>Kitchen Table</h1>
@@ -20,6 +21,9 @@ const Meal=()=>{
                 <input type="search" className="search-bar" placeholder="Enter food name" onChange={(e)=>setSearch(e.target.value)} value={search} onKeyPress={searchMeal}>
                 </input>
              </div>
+             <div>
+             <InventoryList/>
+             </div>
              <div className="container">
                 {
                     (Mymeal==null)? <p className="notFound">Not Found</p> : Mymeal.map((res)=>{
@@ -28,9 +32,11 @@ const Meal=()=>{
                         )
                     })
                 }
-                
              </div>
         </div>
     )
+
 }
+
 export default Meal;
+
