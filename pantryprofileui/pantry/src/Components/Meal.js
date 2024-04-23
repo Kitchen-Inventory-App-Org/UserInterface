@@ -71,7 +71,7 @@ const Meal = () => {
                 <ul className="navbar-items">
                     <li><a href="#">Home</a></li>
                     <li><a href="#">Recipes</a></li>
-                    <li><a href="#">Pantry</a></li>
+                    <li><a href="https://kitchen-table-846a8f12d717.herokuapp.com/showInventory">Pantry</a></li>
                     <li><a href="#">About</a></li>
                 </ul>
             </div>
@@ -81,6 +81,30 @@ const Meal = () => {
             {/* Grocery list section */}
             <div className="grocery-list">
                 <h2>Grocery List</h2>
+                <form onSubmit={(e) => {
+                    e.preventDefault();
+                    addToGroceryList(search);
+                    setSearch("");
+                }}>
+                    <input
+                        type="text"
+                        value={search}
+                        onChange={(e) => setSearch(e.target.value)}
+                        placeholder="Add food to grocery list"
+                    />
+                    <button type="submit">Add</button>
+                </form>
+                <ul>
+                    {groceryList.map((item, index) => (
+                        <li key={index}>
+                            {item}
+                            <button onClick={() => removeFromGroceryList(index)}>Delete</button>
+                        </li>
+                    ))}
+                </ul>
+            </div>
+            <div className="grocery-list2">
+                <h2>Grocery testingTesting</h2>
                 <form onSubmit={(e) => {
                     e.preventDefault();
                     addToGroceryList(search);

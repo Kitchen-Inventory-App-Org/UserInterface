@@ -215,3 +215,48 @@ body{
 .grocery-list li {
     margin-bottom: 5px;
 }
+
+.grocery-list2 {
+    position: static;
+    top: 20%;
+    right: 5%;
+    width: 500px;
+    padding: 10px;
+    background-color: #d3cee6; 
+    border-left: 1px solid #dc0e8d; 
+}
+
+.grocery-list2 h2 {
+    color: #de1a93;
+    margin-top: 0;
+}
+
+.grocery-list2 form {
+    margin-bottom: 100px;
+}
+
+.grocery-list2 input {
+    width: calc(100% - 150px); 
+    margin-right: 5px;
+}
+
+.grocery-list2 button {
+    padding: 5px 10px;
+    background-color: #ac5139;
+    color: #e6d9ce;
+    border: none;
+    cursor: pointer;
+}
+
+.grocery-list2 button:hover {
+    background-color: #4d3c33;
+}
+
+.grocery-list2 ul {
+    list-style: none;
+    padding: 0;
+}
+
+.grocery-list2 li {
+    margin-bottom: 5px;
+}
