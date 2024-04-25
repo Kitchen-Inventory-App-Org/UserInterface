@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { BrowserRouter as Router, Link } from "react-router-dom"; // Import BrowserRouter and Link
 import logo from './image/Logo_3.png';
 import ImageRecognition from "./ImageRecognition";
 
@@ -97,10 +98,10 @@ const Meal = () => {
                 </div>
                 {/* Navigation Links */}
                 <ul className="navbar-items">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Recipes</a></li>
-                    <li><a href="#">Pantry</a></li>
-                    <li><a href="#">About</a></li>
+                    <li><Link to="/">Home</Link></li> {/* Replace anchor tag with Link component */}
+                    <li><Link to="/recipes">Recipes</Link></li> {/* Replace anchor tag with Link component */}
+                    <li><Link to="/pantry">Pantry</Link></li> {/* Replace anchor tag with Link component */}
+                    <li><Link to="/about">About</Link></li> {/* Replace anchor tag with Link component */}
                 </ul>
             </div>
             <div className="container">
