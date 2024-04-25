@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from "react";
 import logo from './image/Logo_3.png';
+import ImageRecognition from "./ImageRecognition";
 
 const Meal = () => {
-    const [search, setSearch] = useState();
+    const [search, setSearch] = useState("");
     const [randomRecipes, setRandomRecipes] = useState([]);
     const [groceryList, setGroceryList] = useState([]);
-
+    const [selectedFile, setSelectedFile] = useState(null);
+    const [suggestions, setSuggestions] = useState([]);
 
     useEffect(() => {
         fetchRandomRecipes();
@@ -52,6 +54,29 @@ const Meal = () => {
         updatedList.splice(index, 1);
         setGroceryList(updatedList);
     };
+
+    const handleFileChange = (event) => {
+        setSelectedFile(event.target.files[0]);
+    };
+
+    const handleSearchChange = (event) => {
+        const { value } = event.target;
+        setSearch(value);
+
+        // You can implement your own logic to fetch suggestions based on the value here
+        // For simplicity, let's say suggestions are fetched from a local array
+        const suggestions = ["Chicken", "Salad", "Pasta", "Soup"];
+        const filteredSuggestions = suggestions.filter(suggestion =>
+            suggestion.toLowerCase().startsWith(value.toLowerCase())
+        );
+        setSuggestions(filteredSuggestions);
+    };
+
+    const handleSuggestionClick = (suggestion) => {
+        setSearch(suggestion);
+        setSuggestions([]);
+    };
+
     return (
         <div className="main">
             <div className="navbar">
@@ -59,14 +84,17 @@ const Meal = () => {
                     <img src={logo} alt="Kitchen Table Logo" className="navbar-logo" />
                     <h1 className="navbar-header">Kitchen Table</h1>
                 </div>
-                <input
-                    type="search"
-                    className="search-bar"
-                    placeholder="Search for something yummy!"
-                    onChange={(e) => setSearch(e.target.value)}
-                    value={search}
-                    onKeyPress={searchMeal}
-                />
+                <div className="search-container">
+                    <input
+                        type="search"
+                        className="search-bar"
+                        placeholder="Search for something yummy!"
+                        onChange={handleSearchChange}
+                        value={search}
+                        onKeyPress={searchMeal}
+                    />
+                    <ImageRecognition />
+                </div>
                 {/* Navigation Links */}
                 <ul className="navbar-items">
                     <li><a href="#">Home</a></li>
@@ -77,6 +105,15 @@ const Meal = () => {
             </div>
             <div className="container">
             </div>
+
+            {/* Display Suggestions */}
+            {suggestions.length > 0 && (
+                <ul className="suggestions">
+                    {suggestions.map((suggestion, index) => (
+                        <li key={index} onClick={() => handleSuggestionClick(suggestion)}>{suggestion}</li>
+                    ))}
+                </ul>
+            )}
 
             {/* Grocery list section */}
             <div className="grocery-list">
@@ -89,7 +126,7 @@ const Meal = () => {
                     <input
                         type="text"
                         value={search}
-                        onChange={(e) => setSearch(e.target.value)}
+                        onChange={handleSearchChange}
                         placeholder="Add food to grocery list"
                     />
                     <button type="submit">Add</button>

@@ -32,10 +32,16 @@
     text-shadow: 3px 1px #4d3c33;
     font-family: sans-serif;
 }
+.search-container {
+    display: flex;
+    align-items: center;
+}
 
 .search-bar {
-    margin-left: 10px; 
-    padding: 5px 10px;
+    flex: 1; 
+    margin-right: 10px; 
+    /* margin-left: 10px; 
+    padding: 5px 10px; */
 }
 
 /* Navbar items */

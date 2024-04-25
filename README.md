@@ -17,3 +17,9 @@
   - `npm start`
 * If react-scripts doesn't exist then use this:
   - `npm install react-scripts --save` while in the pantry directory
+
+
+
+
+npm install @tensorflow-models/coco-ssd
+npm install @tensorflow/tfjs
