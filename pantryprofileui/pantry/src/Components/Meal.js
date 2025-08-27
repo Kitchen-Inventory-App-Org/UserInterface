@@ -5,6 +5,7 @@ const Meal = () => {
     const [search, setSearch] = useState();
     const [randomRecipes, setRandomRecipes] = useState([]);
     const [groceryList, setGroceryList] = useState([]);
+   
 
 
     useEffect(() => {
@@ -42,7 +43,7 @@ const Meal = () => {
                 });
         }
     };
-
+    
     const addToGroceryList = (foodItem) => {
         setGroceryList([...groceryList, foodItem]);
     };
@@ -52,6 +53,7 @@ const Meal = () => {
         updatedList.splice(index, 1);
         setGroceryList(updatedList);
     };
+
     return (
         <div className="main">
             <div className="navbar">
@@ -83,13 +85,12 @@ const Meal = () => {
                 <h2>Grocery List</h2>
                 <form onSubmit={(e) => {
                     e.preventDefault();
-                    addToGroceryList(search);
-                    setSearch("");
+                     addToGroceryList(search);
+                     setSearch("");
                 }}>
                     <input
                         type="text"
-                        value={search}
-                        onChange={(e) => setSearch(e.target.value)}
+                         onChange={(e) => setSearch(e.target.value)}
                         placeholder="Add food to grocery list"
                     />
                     <button type="submit">Add</button>
